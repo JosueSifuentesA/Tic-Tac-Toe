@@ -64,8 +64,6 @@ function App () {
     for (const condition of WINCONDITIONS) {
       const [a, b, c] = condition
       if (checkBoard[a] && checkBoard[a] === checkBoard[b] && checkBoard[a] === checkBoard[c]) {
-        console.log('WINNER')
-        console.log(condition)
         return checkBoard[a]
       }
     }
@@ -83,10 +81,6 @@ function App () {
       setTurn(newTurn)
       newBoard[data] = turn
 
-      /*
-        Aqui vamos a guardar los datos del local storage (turno , tablero)
-
-        */
       window.localStorage.setItem('playerTurn', newTurn)
       window.localStorage.setItem('board', JSON.stringify(newBoard))
 
